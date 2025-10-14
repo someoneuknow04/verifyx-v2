@@ -1,30 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VerifyX v2</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script defer src="assets/js/main.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VerifyX – Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: #fff;
+      color: #111827;
+      overflow-x: hidden;
+    }
+
+    .logo-container {
+      background: white;
+      padding: 40px 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-container img {
+      width: 480px;
+      max-width: 90vw;
+      height: auto;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+    }
+
+    .split {
+      display: flex;
+      flex-direction: row;
+      height: calc(100vh - 160px);
+    }
+
+    .left, .center, .right {
+      flex: 1 1 33.33%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .left {
+      background: #ef4444;
+    }
+
+    .center {
+      background: #4b5563;
+    }
+
+    .right {
+      background: #111;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      max-width: 420px;
+      margin-bottom: 24px;
+      color: #f3f4f6;
+    }
+
+    .left p {
+      color: #fff;
+    }
+
+    .btn {
+      background: white;
+      color: #ef4444;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #f3f4f6;
+    }
+
+    @media (max-width: 768px) {
+      .split {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .left, .center, .right {
+        min-height: 60vh;
+      }
+
+      .logo-container {
+        padding-top: 20px;
+      }
+
+      .logo-container img {
+        width: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">🚀 VerifyX</div>
-    <nav>
-      <a href="bank.html">Bank Hub</a>
-      <a href="verification.html">Verification</a>
-    </nav>
-    <button id="darkModeToggle">🌙</button>
-  </header>
 
-  <main class="hero">
-    <h1>All-In-One Verification Platform</h1>
-    <p>Access banks, verify businesses & professionals — all from one page.</p>
-    <a href="verification.html" class="btn">Start Verifying</a>
-  </main>
+  <!-- LOGO -->
+  <div class="logo-container">
+    <img src="vak-logo.png" alt="VAK Reports Logo" />
+  </div>
 
-  <footer>
-    © 2025 VerifyX | Built by Aakash ⚡
-  </footer>
+  <!-- SPLIT SECTIONS -->
+  <div class="split">
+    <div class="left">
+      <h1>Business Verification</h1>
+      <p>Search and validate business licenses instantly.</p>
+      <a class="btn" href="business.html">Verify Now</a>
+    </div>
+    <div class="center">
+      <h1>Professional Certificate Verification</h1>
+      <p>Search and validate professional licenses and IDs instantly.</p>
+      <a class="btn" href="profession.html">Verify Now</a>
+    </div>
+    <div class="right">
+      <h1>Bank Portals</h1>
+      <p>Login to associated bank dashboards with one click.</p>
+      <a class="btn" href="bank.html">Go to Portals</a>
+    </div>
+  </div>
+
 </body>
 </html>
