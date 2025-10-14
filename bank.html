@@ -181,7 +181,7 @@
   </div>
 
   <div class="container">
-    <!-- === Original Banks Data === -->
+    <!-- 12 Original Banks -->
     <div class="bank-card" data-aos="fade-up">
       <img src="https://ilens.icicibank.com/login/image/logo_icici_ilens.png" alt="ICICI Ilens">
       <h3>ICICI Ilens</h3>
@@ -212,69 +212,43 @@
       <a href="https://login.salesforce.com/?locale=in" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
-    <!-- Add all other original banks exactly as before -->
-  </div>
-
-  <a href="index.html" class="back-button">⬅ Back to Home</a>
-  <footer>Made by Someone</footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    // ===== SEARCH FUNCTION =====
-    const searchBar = document.getElementById("searchBar");
-    const bankCards = document.querySelectorAll(".bank-card");
-
-    searchBar.addEventListener("input", () => {
-      const query = searchBar.value.toLowerCase();
-      bankCards.forEach(card => {
-        card.style.display = card.textContent.toLowerCase().includes(query) ? "flex" : "none";
-      });
-    });
-
-    // ===== FAVORITES SYSTEM =====
-    const favButtons = document.querySelectorAll(".fav-btn");
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-    function updateFavorites() {
-      favButtons.forEach(btn => {
-        const card = btn.closest(".bank-card");
-        const name = card.querySelector("h3").textContent.trim();
-        btn.textContent = favorites.includes(name) ? "💛" : "⭐";
-      });
-    }
-
-    favButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const card = btn.closest(".bank-card");
-        const name = card.querySelector("h3").textContent.trim();
-        if (favorites.includes(name)) {
-          favorites = favorites.filter(f => f !== name);
-        } else {
-          favorites.push(name);
-        }
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-        updateFavorites();
-      });
-    });
-
-    updateFavorites();
-
-    // ===== DARK MODE =====
-    const toggleMode = document.getElementById("toggleMode");
-    toggleMode.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      const mode = document.body.classList.contains("dark") ? "dark" : "light";
-      localStorage.setItem("mode", mode);
-      toggleMode.textContent = mode === "dark" ? "☀️" : "🌙";
-    });
-
-    if (localStorage.getItem("mode") === "dark") {
-      document.body.classList.add("dark");
-      toggleMode.textContent = "☀️";
-    }
-  </script>
-
-</body>
-</html>
+    <div class="bank-card" data-aos="fade-up">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxpZqIBTrSpdhXA0polVayuKyCs0FEVgkyamhf3jCIXhO7cKXFXud-eWOq5muqZC13i-M&usqp=CAU" alt="HFC ICICI">
+      <h3>HFC ICICI</h3>
+      <a href="https://veloct.icicihfc.com/TPLSW/" target="_blank">Login</a>
+      <button class="fav-btn">⭐</button>
+    </div>
+    <div class="bank-card" data-aos="fade-up">
+      <img src="https://abhfluat.abcscuat.com/-/media/feature/abcl/abfl/sticky-tab-content/abhfl-square.ashx?h=600&w=600&la=en&hash=1B2E2C8833794593FFED1D2141C6356F" alt="ABHFL LLP">
+      <h3>ABHFL LLP</h3>
+      <a href="https://finverse.adityabirlacapital.com/auth/login" target="_blank">Login</a>
+      <button class="fav-btn">⭐</button>
+    </div>
+    <div class="bank-card" data-aos="fade-up">
+      <img src="https://content.jdmagicbox.com/v2/comp/mumbai/26/022p7702426/catalogue/hdfc-bank-central-processing-unit-sakinaka-mumbai-private-sector-banks-766rk7ygwc.jpg" alt="HDFC BL">
+      <h3>HDFC BL</h3>
+      <a href="https://appaccess.hdfcbank.com/" target="_blank">Login</a>
+      <button class="fav-btn">⭐</button>
+    </div>
+    <div class="bank-card" data-aos="fade-up">
+      <img src="https://www.nfcw.com/wp-content/uploads/2020/06/axis-bank-logo.jpg" alt="Axis Bank">
+      <h3>Axis Bank</h3>
+      <a href="https://xpsf1.axisbank.com/main/s/login/" target="_blank">Login</a>
+      <button class="fav-btn">⭐</button>
+    </div>
+    <div class="bank-card" data-aos="fade-up">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS91g86GYPEmouJD3LiPGSYtYYW9XycFIu4pA&s" alt="HDFC HL Bank">
+      <h3>HDFC HL Bank</h3>
+      <a href="https://userportal.hdfcbank.com/#/home/" target="_blank">Login</a>
+      <button class="fav-btn">⭐</button>
+    </div>
+    <div class="bank-card" data-aos="fade-up">
+      <img src="https://yt3.googleusercontent.com/U4_QJjAwGhUYDStdq5EbjMx8KOooiXTHu9AStxkKcQEpJwc8D94LC7CwPi2KQoRbXe6gd7scUg=s900-c-k-c0x00ffffff-no-rj" alt="RBL Bank">
+      <h3>RBL Bank</h3>
+      <a href="https://rloansptr.rblbank.com/login//" target="_blank">Login</a>
+      <button class="fav-btn">⭐</button>
+    </div>
+    <div class="bank-card" data-aos="fade-up">
+      <img src="https://static.theprint.in/wp-content/uploads/2024/07/ANI-20240716060045.jpg" alt="IIFL Bank">
+      <h3>IIFL Bank</h3>
+      <a href="https://iifl.onelogin.com/login2/?return=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJicmFuZF9pZCI6Im1hc3RlciIsIm5vdGlmaWNhdGlvbiI6eyJ0eXBlIjoiaW5mbyIsImljb24iOiJjb25uZWN0aW9uIiwibWVzc2FnZSI6IkNvbm5lY3RpbmcgdG8gKipIRkMgTE9TKioiLCJ2YWx1ZXMiOlsi
