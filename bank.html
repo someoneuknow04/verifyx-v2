@@ -1,32 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bank Hub | VerifyX v2</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script defer src="assets/js/main.js"></script>
-  <script defer src="assets/js/bank.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VerifyX - Bank Portal Hub</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fafb;
+      color: #111827;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: #ef4444;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-weight: 600;
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .bank-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border: 1px solid #f3f4f6;
+      transition: transform 0.2s ease;
+    }
+
+    .bank-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .bank-card h3 {
+      margin: 10px 0;
+      font-weight: 600;
+    }
+
+    .bank-card a {
+      background: #ef4444;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.2s;
+      font-weight: 500;
+    }
+
+    .bank-card a:hover {
+      background: #dc2626;
+    }
+
+    .fav-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-top: 10px;
+      transition: transform 0.2s;
+    }
+
+    .fav-btn:hover {
+      transform: scale(1.2);
+    }
+
+    /* Search + Toggle Section */
+    .tools {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    #searchBar {
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 220px;
+      outline: none;
+    }
+
+    #toggleMode {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #ef4444;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* ===== Dark Mode ===== */
+    body.dark {
+      background: #121212;
+      color: #f5f5f5;
+    }
+
+    body.dark header {
+      background: #333;
+    }
+
+    body.dark .bank-card {
+      background: #1e1e1e;
+      border-color: #444;
+    }
+
+    body.dark .bank-card a {
+      background: #f87171;
+    }
+
+    body.dark .bank-card a:hover {
+      background: #ef4444;
+    }
+
+    body.dark #toggleMode {
+      background: #555;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">🚀 VerifyX</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="verification.html">Verification</a>
-    </nav>
-    <button id="darkModeToggle">🌙</button>
+  <header>
+    <h1>🏦 VerifyX — Bank Portal Hub</h1>
   </header>
 
-  <main class="container">
-    <h1>Bank Dashboard</h1>
-    <input type="text" id="bankSearch" placeholder="Search banks...">
+  <div class="tools">
+    <input id="searchBar" type="text" placeholder="🔍 Search banks..." />
+    <button id="toggleMode">🌙</button>
+  </div>
 
-    <div id="bankGrid" class="grid"></div>
-  </main>
+  <div class="container">
+    <!-- === Your Existing Bank Cards (keep all) === -->
+    <div class="bank-card" data-aos="fade-up">
+      <h3>ICICI Bank</h3>
+      <a href="https://ilens.icicibank.com/" target="_blank">Login</a>
+      <button class="fav-btn">⭐</button>
+    </div>
 
-  <footer>
-    © 2025 VerifyX | Built by Aakash ⚡
-  </footer>
+    <div class="bank-card" data-aos="fade-up">
+      <h3>HDFC Bank</h3>
+      <a href="https://netbanking.hdfcbank.com/" target="_blank">Login</a>
+      <button class="fav-btn">⭐</button>
+    </div>
+
+    <div class="bank-card" data-aos="fade-up">
+      <h3>SBI Bank</h3>
+      <a href="https://retail.onlinesbi.sbi/" target="_blank">Login</a>
+      <button class="fav-btn">⭐</button>
+    </div>
+
+    <div class="bank-card" data-aos="fade-up">
+      <h3>Axis Bank</h3>
+      <a href="https://www.axisbank.com/" target="_blank">Login</a>
+      <button class="fav-btn">⭐</button>
+    </div>
+
+    <!-- Add rest of your banks here — don’t delete any -->
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // ===== SEARCH FUNCTION =====
+    const searchBar = document.getElementById("searchBar");
+    const bankCards = document.querySelectorAll(".bank-card");
+
+    searchBar.addEventListener("input", () => {
+      const query = searchBar.value.toLowerCase();
+      bankCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? "flex" : "none";
+      });
+    });
+
+    // ===== FAVORITES SYSTEM =====
+    const favButtons = document.querySelectorAll(".fav-btn");
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    function updateFavorites() {
+      favButtons.forEach(btn => {
+        const card = btn.closest(".bank-card");
+        const name = card.querySelector("h3").textContent.trim();
+        btn.textContent = favorites.includes(name) ? "💛" : "⭐";
+      });
+    }
+
+    favButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const card = btn.closest(".bank-card");
+        const name = card.querySelector("h3").textContent.trim();
+        if (favorites.includes(name)) {
+          favorites = favorites.filter(f => f !== name);
+        } else {
+          favorites.push(name);
+        }
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+        updateFavorites();
+      });
+    });
+
+    updateFavorites();
+
+    // ===== DARK MODE =====
+    const toggleMode = document.getElementById("toggleMode");
+    toggleMode.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const mode = document.body.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("mode", mode);
+      toggleMode.textContent = mode === "dark" ? "☀️" : "🌙";
+    });
+
+    if (localStorage.getItem("mode") === "dark") {
+      document.body.classList.add("dark");
+      toggleMode.textContent = "☀️";
+    }
+  </script>
 </body>
 </html>
