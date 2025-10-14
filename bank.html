@@ -251,4 +251,71 @@
     <div class="bank-card" data-aos="fade-up">
       <img src="https://static.theprint.in/wp-content/uploads/2024/07/ANI-20240716060045.jpg" alt="IIFL Bank">
       <h3>IIFL Bank</h3>
-      <a href="https://iifl.onelogin.com/login2/?return=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJicmFuZF9pZCI6Im1hc3RlciIsIm5vdGlmaWNhdGlvbiI6eyJ0eXBlIjoiaW5mbyIsImljb24iOiJjb25uZWN0aW9uIiwibWVzc2FnZSI6IkNvbm5lY3RpbmcgdG8gKipIRkMgTE9TKioiLCJ2YWx1ZXMiOlsi
+      <a href="https://iifl.onelogin.com/login2/?return=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJicmFuZF9pZCI6Im1hc3RlciIsIm5vdGlmaWNhdGlvbiI6eyJ0eXBlIjoiaW5mbyIsImljb24iOiJjb25uZWN0aW9uIiwibWVzc2FnZSI6IkNvbm5lY3RpbmcgdG8gKipIRkMgTE9TKioiLCJ2YWx1ZXMiOlsiKipIRkMgTE9TKioiXSwidGVtcGxhdGVfaWQiOiJjb25uZWN0aW5nX3RvX2FwcCJ9LCJwYXJhbXMiOnt9LCJmZl9tdWx0aXBsZV9icmFuZHMiOnRydWUsImFwcF9pZCI6NDY5ODA5LCJtZXRob2QiOiJnZXQiLCJhdWQiOiJBQ0NFU1MiLCJ1cmkiOiJodHRwczovL2lpZmwub25lbG9naW4uY29tL3RydXN0L29wZW5pZC1jb25uZWN0L3YyP2NsaWVudF9pZD02OTBiMGM3MC1kMGMyLTAxM2QtNmY2NC0zZjMxZWE0OGE3OWQzODE4OCZncmFudD1jM2FiNTk2YS04ZmU0LTQ1NzgtYmIxOS05ZWU4NjNmZmI3NjUmY3R4PWV5SmhiR2NpT2lKSVV6VXhNaUlzSW5SNWNDSTZJa3BYVkNKOS5leUp5WlhSMWNtNWZkRzhpT2lKb2RIUndjem92TDJscFptd3ViMjVsYkc5bmFXNHVZMjl0TDI5cFpHTXZNaTloZFhSb0wyTXpZV0kxT1RaaExUaG1aVFF0TkRVM09DMWlZakU1TFRsbFpUZzJNMlptWWpjMk5TOXNiMmRwYmlJc0ltbGhkQ0k2TVRjMU1UWXdOak13TkgwLmY1UHhFZ0NuQWpXdUV5dFphQWRYSkF4NE9nb1NFR0tEdVZyYi1WbXhvSXZidThld0FtMTVqd2tYLTZCSkVnOVJWalRWOUdvTmdLVnd6ZUYya2ZjZVp3Jm9sX29pZGNfaXNzdWVyX3VybD1odHRwcyUzQSUyRiUyRmlpZmwub25lbG9naW4uY29tJTJGb2lkYyUyRjIi target="_blank">Login</a>
+      <button class="fav-btn">⭐</button>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-button">⬅ Back to Home</a>
+  <footer>Made by Someone</footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // ===== SEARCH FUNCTION =====
+    const searchBar = document.getElementById("searchBar");
+    const bankCards = document.querySelectorAll(".bank-card");
+
+    searchBar.addEventListener("input", () => {
+      const query = searchBar.value.toLowerCase();
+      bankCards.forEach(card => {
+        card.style.display = card.textContent.toLowerCase().includes(query) ? "flex" : "none";
+      });
+    });
+
+    // ===== FAVORITES SYSTEM =====
+    const favButtons = document.querySelectorAll(".fav-btn");
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    function updateFavorites() {
+      favButtons.forEach(btn => {
+        const card = btn.closest(".bank-card");
+        const name = card.querySelector("h3").textContent.trim();
+        btn.textContent = favorites.includes(name) ? "💛" : "⭐";
+      });
+    }
+
+    favButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const card = btn.closest(".bank-card");
+        const name = card.querySelector("h3").textContent.trim();
+        if (favorites.includes(name)) {
+          favorites = favorites.filter(f => f !== name);
+        } else {
+          favorites.push(name);
+        }
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+        updateFavorites();
+      });
+    });
+
+    updateFavorites();
+
+    // ===== DARK MODE =====
+    const toggleMode = document.getElementById("toggleMode");
+    toggleMode.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const mode = document.body.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("mode", mode);
+      toggleMode.textContent = mode === "dark" ? "☀️" : "🌙";
+    });
+
+    if (localStorage.getItem("mode") === "dark") {
+      document.body.classList.add("dark");
+      toggleMode.textContent = "☀️";
+    }
+  </script>
+
+</body>
+</html>
