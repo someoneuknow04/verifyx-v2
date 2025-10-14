@@ -1,194 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VerifyX – Bank Portals</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Manrope', sans-serif;
-      background-color: #fefefe;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: #ef4444;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
-    header p {
-      font-size: 16px;
-      margin-top: 8px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-    }
-
-    .bank-card {
-      background: #fff;
-      border: 2px solid #ef4444;
-      border-radius: 16px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      text-align: center;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .bank-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    }
-
-    .bank-card img {
-      width: 120px;
-      height: 60px;
-      object-fit: contain;
-      margin-bottom: 16px;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
-    }
-
-    .bank-card h3 {
-      margin: 0;
-      font-size: 16px;
-      color: #ef4444;
-      font-weight: 700;
-    }
-
-    .bank-card a {
-      margin-top: 12px;
-      background: #ef4444;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .bank-card a:hover {
-      background: #dc2626;
-    }
-
-    .back-button {
-      display: block;
-      margin: 40px auto 20px;
-      background: #ef4444;
-      color: white;
-      text-align: center;
-      padding: 12px 24px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .back-button:hover {
-      background: #dc2626;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #64748b;
-      margin-bottom: 20px;
-      font-weight: 500;
-    }
-  </style>
+  <title>Bank Hub | VerifyX v2</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/bank.js"></script>
 </head>
 <body>
-
-  <header data-aos="fade-down">
-    <h1>🏦 Bank Portals</h1>
-    <p>Direct access to partner bank dashboards. Click to login instantly.</p>
+  <header class="header">
+    <div class="logo">🚀 VerifyX</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="verification.html">Verification</a>
+    </nav>
+    <button id="darkModeToggle">🌙</button>
   </header>
 
-  <div class="container">
-    <div class="bank-card" data-aos="fade-up">
-      <img src="https://ilens.icicibank.com/login/image/logo_icici_ilens.png" alt="ICICI Ilens">
-      <h3>ICICI Ilens</h3>
-      <a href="https://ilens.icicibank.com/" target="_blank">Login</a>
-    </div>
-    <div class="bank-card" data-aos="fade-up">
-      <img src="https://www.piramalfinance.com/pd/assets/images/piramal-logo-text.svg" alt="Piramal Finance HF">
-      <h3>Piramal Login</h3>
-      <a href="https://www.piramalfinance.com/pd/login" target="_blank">Login</a>
-    </div>
-    <div class="bank-card" data-aos="fade-up">
-      <img src="https://www.crackerandrush.com/wp-content/uploads/2023/06/jfb-logo-scaled.webp" alt="Jana Bank">
-      <h3>Jana Bank</h3>
-      <a href="https://lendperfect.janabank.com/lendperfect/login" target="_blank">Login</a>
-    </div>
-    <div class="bank-card" data-aos="fade-up">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7YdCWQHuBbHye0j0w4X3vzqn71etekwXS7A&s" alt="PNB Housing">
-      <h3>PNB UConnect</h3>
-      <a href="https://uconnect.pnbhousing.com/STS/Account/Login" target="_blank">Login</a>
-    </div>
-    <div class="bank-card" data-aos="fade-up">
-      <img src="https://static.theprint.in/wp-content/uploads/2023/07/ANI-20230704050504.jpg" alt="IDFC Bank">
-      <h3>IDFC Salesforce</h3>
-      <a href="https://login.salesforce.com/?locale=in" target="_blank">Login</a>
-    </div>
-    <div class="bank-card" data-aos="fade-up">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxpZqIBTrSpdhXA0polVayuKyCs0FEVgkyamhf3jCIXhO7cKXFXud-eWOq5muqZC13i-M&usqp=CAU" alt="HFC ICICI">
-      <h3>HFC ICICI</h3>
-      <a href="https://veloct.icicihfc.com/TPLSW/" target="_blank">Login</a>
-    </div>
-    <div class="bank-card" data-aos="fade-up">
-      <img src="https://abhfluat.abcscuat.com/-/media/feature/abcl/abfl/sticky-tab-content/abhfl-square.ashx?h=600&w=600&la=en&hash=1B2E2C8833794593FFED1D2141C6356F" alt="ABHFL LLP">
-      <h3>ABHFL LLP</h3>
-      <a href="https://finverse.adityabirlacapital.com/auth/login" target="_blank">Login</a>
-    </div>
-     <div class="bank-card" data-aos="fade-up">
-      <img src="https://content.jdmagicbox.com/v2/comp/mumbai/26/022p7702426/catalogue/hdfc-bank-central-processing-unit-sakinaka-mumbai-private-sector-banks-766rk7ygwc.jpg" alt="HDFC BL">
-      <h3>HDFC BL</h3>
-      <a href="https://appaccess.hdfcbank.com/" target="_blank">Login</a>
-    </div>
-     <div class="bank-card" data-aos="fade-up">
-      <img src="https://www.nfcw.com/wp-content/uploads/2020/06/axis-bank-logo.jpg" alt="Axis Bank">
-      <h3>Axis Bank</h3>
-      <a href="https://xpsf1.axisbank.com/main/s/login/" target="_blank">Login</a>
-    </div>
-     <div class="bank-card" data-aos="fade-up">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS91g86GYPEmouJD3LiPGSYtYYW9XycFIu4pA&s" alt="HDFC HL Bank">
-      <h3>HDFC HL Bank</h3>
-      <a href="https://userportal.hdfcbank.com/#/home/" target="_blank">Login</a>
-    </div>
-     <div class="bank-card" data-aos="fade-up">
-      <img src="https://yt3.googleusercontent.com/U4_QJjAwGhUYDStdq5EbjMx8KOooiXTHu9AStxkKcQEpJwc8D94LC7CwPi2KQoRbXe6gd7scUg=s900-c-k-c0x00ffffff-no-rj" alt="RBL Bank">
-      <h3>RBL Bank</h3>
-      <a href="https://rloansptr.rblbank.com/login//" target="_blank">Login</a>
-    </div>
-     <div class="bank-card" data-aos="fade-up">
-      <img src="https://static.theprint.in/wp-content/uploads/2024/07/ANI-20240716060045.jpg" alt="IIFL Bank">
-      <h3>IIFL Bank</h3>
-      <a href="https://iifl.onelogin.com/login2/?return=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJicmFuZF9pZCI6Im1hc3RlciIsIm5vdGlmaWNhdGlvbiI6eyJ0eXBlIjoiaW5mbyIsImljb24iOiJjb25uZWN0aW9uIiwibWVzc2FnZSI6IkNvbm5lY3RpbmcgdG8gKipIRkMgTE9TKioiLCJ2YWx1ZXMiOlsiKipIRkMgTE9TKioiXSwidGVtcGxhdGVfaWQiOiJjb25uZWN0aW5nX3RvX2FwcCJ9LCJwYXJhbXMiOnt9LCJmZl9tdWx0aXBsZV9icmFuZHMiOnRydWUsImFwcF9pZCI6NDY5ODA5LCJtZXRob2QiOiJnZXQiLCJhdWQiOiJBQ0NFU1MiLCJ1cmkiOiJodHRwczovL2lpZmwub25lbG9naW4uY29tL3RydXN0L29wZW5pZC1jb25uZWN0L3YyP2NsaWVudF9pZD02OTBiMGM3MC1kMGMyLTAxM2QtNmY2NC0zZjMxZWE0OGE3OWQzODE4OCZncmFudD1jM2FiNTk2YS04ZmU0LTQ1NzgtYmIxOS05ZWU4NjNmZmI3NjUmY3R4PWV5SmhiR2NpT2lKSVV6VXhNaUlzSW5SNWNDSTZJa3BYVkNKOS5leUp5WlhSMWNtNWZkRzhpT2lKb2RIUndjem92TDJscFptd3ViMjVsYkc5bmFXNHVZMjl0TDI5cFpHTXZNaTloZFhSb0wyTXpZV0kxT1RaaExUaG1aVFF0TkRVM09DMWlZakU1TFRsbFpUZzJNMlptWWpjMk5TOXNiMmRwYmlJc0ltbGhkQ0k2TVRjMU1UWXdOak13TkgwLmY1UHhFZ0NuQWpXdUV5dFphQWRYSkF4NE9nb1NFR0tEdVZyYi1WbXhvSXZidThld0FtMTVqd2tYLTZCSkVnOVJWalRWOUdvTmdLVnd6ZUYya2ZjZVp3Jm9sX29pZGNfaXNzdWVyX3VybD1odHRwcyUzQSUyRiUyRmlpZmwub25lbG9naW4uY29tJTJGb2lkYyUyRjIiLCJpc3MiOiJNT05PUkFJTCIsImV4cCI6MTc1MTYwNjQ4NX0.1j4XqSFPXQJCXOCVnDt8PG9nVdyM8weuuIf3HUltnCI#app=469809" target="_blank">Login</a>
-    </div>
-  </div>
+  <main class="container">
+    <h1>Bank Dashboard</h1>
+    <input type="text" id="bankSearch" placeholder="Search banks...">
 
-  <a href="index.html" class="back-button">⬅ Back to Home</a>
-  <footer>Made by Someone</footer>
+    <div id="bankGrid" class="grid"></div>
+  </main>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-
+  <footer>
+    © 2025 VerifyX | Built by Aakash ⚡
+  </footer>
 </body>
 </html>
