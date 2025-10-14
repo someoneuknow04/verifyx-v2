@@ -2,98 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VerifyX - Bank Portal Hub</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VerifyX – Bank Portals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
-      font-family: "Poppins", sans-serif;
+      font-family: 'Manrope', sans-serif;
+      background-color: #fefefe;
       margin: 0;
       padding: 0;
-      background: #f9fafb;
-      color: #111827;
       transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background-color: #121212;
+      color: #f5f5f5;
     }
 
     header {
       background: #ef4444;
       color: white;
+      padding: 60px 20px;
       text-align: center;
-      padding: 1rem 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
-      font-weight: 600;
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 32px;
     }
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
+    header p {
+      font-size: 16px;
+      margin-top: 8px;
     }
 
-    .bank-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      border: 1px solid #f3f4f6;
-      transition: transform 0.2s ease;
-    }
-
-    .bank-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .bank-card h3 {
-      margin: 10px 0;
-      font-weight: 600;
-    }
-
-    .bank-card a {
-      background: #ef4444;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.2s;
-      font-weight: 500;
-    }
-
-    .bank-card a:hover {
-      background: #dc2626;
-    }
-
-    .fav-btn {
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      font-size: 1.2rem;
-      margin-top: 10px;
-      transition: transform 0.2s;
-    }
-
-    .fav-btn:hover {
-      transform: scale(1.2);
-    }
-
-    /* Search + Toggle Section */
     .tools {
       text-align: center;
-      margin-top: 1rem;
+      margin: 20px 0;
     }
 
     #searchBar {
@@ -114,14 +60,27 @@
       margin-left: 10px;
     }
 
-    /* ===== Dark Mode ===== */
-    body.dark {
-      background: #121212;
-      color: #f5f5f5;
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
     }
 
-    body.dark header {
-      background: #333;
+    .bank-card {
+      background: #fff;
+      border: 2px solid #ef4444;
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     body.dark .bank-card {
@@ -129,22 +88,91 @@
       border-color: #444;
     }
 
+    .bank-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .bank-card img {
+      width: 120px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+    }
+
+    .bank-card h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #ef4444;
+      font-weight: 700;
+    }
+
+    body.dark .bank-card h3 {
+      color: #f87171;
+    }
+
+    .bank-card a {
+      margin-top: 12px;
+      background: #ef4444;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
     body.dark .bank-card a {
       background: #f87171;
+    }
+
+    .bank-card a:hover {
+      background: #dc2626;
     }
 
     body.dark .bank-card a:hover {
       background: #ef4444;
     }
 
-    body.dark #toggleMode {
-      background: #555;
+    .fav-btn {
+      border: none;
+      background: transparent;
+      font-size: 1.4rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .back-button {
+      display: block;
+      margin: 40px auto 20px;
+      background: #ef4444;
+      color: white;
+      text-align: center;
+      padding: 12px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-button:hover {
+      background: #dc2626;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 20px;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🏦 VerifyX — Bank Portal Hub</h1>
+
+  <header data-aos="fade-down">
+    <h1>🏦 Bank Portals</h1>
+    <p>Direct access to partner bank dashboards. Click to login instantly.</p>
   </header>
 
   <div class="tools">
@@ -153,33 +181,42 @@
   </div>
 
   <div class="container">
-    <!-- === Your Existing Bank Cards (keep all) === -->
+    <!-- === Original Banks Data === -->
     <div class="bank-card" data-aos="fade-up">
-      <h3>ICICI Bank</h3>
+      <img src="https://ilens.icicibank.com/login/image/logo_icici_ilens.png" alt="ICICI Ilens">
+      <h3>ICICI Ilens</h3>
       <a href="https://ilens.icicibank.com/" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
-
     <div class="bank-card" data-aos="fade-up">
-      <h3>HDFC Bank</h3>
-      <a href="https://netbanking.hdfcbank.com/" target="_blank">Login</a>
+      <img src="https://www.piramalfinance.com/pd/assets/images/piramal-logo-text.svg" alt="Piramal Finance HF">
+      <h3>Piramal Login</h3>
+      <a href="https://www.piramalfinance.com/pd/login" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
-
     <div class="bank-card" data-aos="fade-up">
-      <h3>SBI Bank</h3>
-      <a href="https://retail.onlinesbi.sbi/" target="_blank">Login</a>
+      <img src="https://www.crackerandrush.com/wp-content/uploads/2023/06/jfb-logo-scaled.webp" alt="Jana Bank">
+      <h3>Jana Bank</h3>
+      <a href="https://lendperfect.janabank.com/lendperfect/login" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
-
     <div class="bank-card" data-aos="fade-up">
-      <h3>Axis Bank</h3>
-      <a href="https://www.axisbank.com/" target="_blank">Login</a>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7YdCWQHuBbHye0j0w4X3vzqn71etekwXS7A&s" alt="PNB Housing">
+      <h3>PNB UConnect</h3>
+      <a href="https://uconnect.pnbhousing.com/STS/Account/Login" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
-
-    <!-- Add rest of your banks here — don’t delete any -->
+    <div class="bank-card" data-aos="fade-up">
+      <img src="https://static.theprint.in/wp-content/uploads/2023/07/ANI-20230704050504.jpg" alt="IDFC Bank">
+      <h3>IDFC Salesforce</h3>
+      <a href="https://login.salesforce.com/?locale=in" target="_blank">Login</a>
+      <button class="fav-btn">⭐</button>
+    </div>
+    <!-- Add all other original banks exactly as before -->
   </div>
+
+  <a href="index.html" class="back-button">⬅ Back to Home</a>
+  <footer>Made by Someone</footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -192,8 +229,7 @@
     searchBar.addEventListener("input", () => {
       const query = searchBar.value.toLowerCase();
       bankCards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(query) ? "flex" : "none";
+        card.style.display = card.textContent.toLowerCase().includes(query) ? "flex" : "none";
       });
     });
 
@@ -239,5 +275,6 @@
       toggleMode.textContent = "☀️";
     }
   </script>
+
 </body>
 </html>
