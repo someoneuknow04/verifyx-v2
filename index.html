@@ -9,7 +9,7 @@
   <style>
     body {
       font-family: 'Manrope', sans-serif;
-      background-color: #fefefe;
+      background: #fefefe;
       margin: 0;
       padding: 0;
       color: #111827;
@@ -19,14 +19,24 @@
       color: white;
       padding: 60px 20px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    header .logo {
+      width: 100px;
+      max-width: 25%;
+      height: auto;
+      object-fit: contain;
     }
     header h1 {
-      font-size: 36px;
       margin: 0;
+      font-size: 36px;
       font-weight: 800;
     }
     header p {
-      margin-top: 8px;
+      margin: 0;
       font-size: 16px;
       font-weight: 500;
     }
@@ -35,76 +45,75 @@
       margin: 40px auto;
       padding: 0 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
       gap: 24px;
     }
     .section-card {
-      background: #fff;
-      border: 2px solid #ef4444;
-      border-radius: 16px;
-      padding: 32px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+      background:#fff;
+      border:2px solid #ef4444;
+      border-radius:16px;
+      padding:32px 20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor:pointer;
     }
     .section-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(239,68,68,0.2);
+      box-shadow:0 12px 24px rgba(239,68,68,0.2);
     }
     .section-card img {
-      width: 100px;
-      margin-bottom: 16px;
+      width:80px;
+      height:80px;
+      margin-bottom:16px;
+      object-fit:contain;
     }
     .section-card h2 {
-      color: #ef4444;
-      font-weight: 700;
-      font-size: 20px;
-      margin-bottom: 12px;
+      color:#ef4444;
+      font-weight:700;
+      font-size:20px;
+      margin-bottom:12px;
     }
     .section-card p {
-      font-size: 14px;
-      color: #4b5563;
+      font-size:14px;
+      color:#4b5563;
     }
     footer {
-      text-align: center;
-      font-size: 14px;
-      color: #64748b;
-      margin: 40px 0;
+      text-align:center;
+      font-size:14px;
+      color:#64748b;
+      margin:40px 0;
     }
-    @media (max-width: 600px) {
-      .section-card {
-        padding: 24px 12px;
-      }
-      header h1 {
-        font-size: 28px;
-      }
+    @media (max-width:600px){
+      header h1{font-size:28px;}
+      .section-card{padding:24px 12px;}
     }
   </style>
 </head>
-<body>
+<body data-aos="fade-in">
 
   <header data-aos="fade-down">
+    <img src="logo.png" alt="VerifyX Logo" class="logo">
     <h1>VerifyX</h1>
     <p>All Verifications in One Place – Banks, Business & Professionals</p>
   </header>
 
   <div class="container">
     <a href="business.html" class="section-card" data-aos="fade-up">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Business_icon.svg/1024px-Business_icon.svg.png" alt="Business">
+      <img src="logo.png" alt="Business">
       <h2>💼 Business</h2>
       <p>Instant access to GST, UDYAM, MCA & other business verifications.</p>
     </a>
     <a href="bank.html" class="section-card" data-aos="fade-up" data-aos-delay="100">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Verify-icon.svg/1024px-Verify-icon.svg.png" alt="Banks">
+      <img src="logo.png" alt="Banks">
       <h2>🏦 Banks</h2>
       <p>Direct links to partner banks and financial portals.</p>
     </a>
     <a href="profession.html" class="section-card" data-aos="fade-up" data-aos-delay="200">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Professional_icon.svg/1024px-Professional_icon.svg.png" alt="Professionals">
-      <h2>👨‍⚕️ Professionals</h2>
+      <img src="logo.png" alt="Professionals">
+      <h2>👨‍⚕️ Professions</h2>
       <p>Verify doctors, lawyers, and other certified professionals quickly.</p>
     </a>
   </div>
@@ -114,9 +123,7 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: true });
-  </script>
+  <script>AOS.init({ duration:800, once:true });</script>
 
 </body>
 </html>
