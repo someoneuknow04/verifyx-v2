@@ -16,15 +16,16 @@
     }
 
     body.dark {
-      background-color: #121212;
-      color: #f5f5f5;
+      background-color: #0f172a;
+      color: #e2e8f0;
     }
 
     header {
       background: #ef4444;
       color: white;
-      padding: 60px 20px;
+      padding: 60px 20px 40px;
       text-align: center;
+      position: relative;
     }
 
     header h1 {
@@ -37,27 +38,33 @@
       margin-top: 8px;
     }
 
-    .tools {
+    #toggleMode {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: white;
+      color: #ef4444;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .search-container {
       text-align: center;
-      margin: 20px 0;
+      margin-top: 20px;
     }
 
     #searchBar {
-      padding: 10px 16px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      width: 220px;
+      width: 80%;
+      max-width: 400px;
+      padding: 10px 14px;
+      border: 2px solid #ef4444;
+      border-radius: 10px;
       outline: none;
-    }
-
-    #toggleMode {
-      padding: 10px 16px;
-      border: none;
-      border-radius: 8px;
-      background: #ef4444;
-      color: white;
-      cursor: pointer;
-      margin-left: 10px;
+      font-size: 16px;
     }
 
     .container {
@@ -81,11 +88,12 @@
       text-align: center;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
     }
 
     body.dark .bank-card {
-      background: #1e1e1e;
-      border-color: #444;
+      background: #1e293b;
+      border-color: #f87171;
     }
 
     .bank-card:hover {
@@ -109,7 +117,7 @@
     }
 
     body.dark .bank-card h3 {
-      color: #f87171;
+      color: #fca5a5;
     }
 
     .bank-card a {
@@ -123,24 +131,18 @@
       transition: background 0.3s ease;
     }
 
-    body.dark .bank-card a {
-      background: #f87171;
-    }
-
     .bank-card a:hover {
       background: #dc2626;
     }
 
-    body.dark .bank-card a:hover {
-      background: #ef4444;
-    }
-
     .fav-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
       border: none;
       background: transparent;
-      font-size: 1.4rem;
+      font-size: 20px;
       cursor: pointer;
-      margin-top: 10px;
     }
 
     .back-button {
@@ -173,85 +175,96 @@
   <header data-aos="fade-down">
     <h1>🏦 Bank Portals</h1>
     <p>Direct access to partner bank dashboards. Click to login instantly.</p>
+    <button id="toggleMode">🌙</button>
   </header>
 
-  <div class="tools">
-    <input id="searchBar" type="text" placeholder="🔍 Search banks..." />
-    <button id="toggleMode">🌙</button>
+  <div class="search-container" data-aos="fade-up">
+    <input type="text" id="searchBar" placeholder="Search bank...">
   </div>
 
   <div class="container">
-    <!-- 12 Original Banks -->
+    <!-- ===== YOUR ORIGINAL 12 BANKS ===== -->
     <div class="bank-card" data-aos="fade-up">
       <img src="https://ilens.icicibank.com/login/image/logo_icici_ilens.png" alt="ICICI Ilens">
       <h3>ICICI Ilens</h3>
       <a href="https://ilens.icicibank.com/" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
+
     <div class="bank-card" data-aos="fade-up">
       <img src="https://www.piramalfinance.com/pd/assets/images/piramal-logo-text.svg" alt="Piramal Finance HF">
       <h3>Piramal Login</h3>
       <a href="https://www.piramalfinance.com/pd/login" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
+
     <div class="bank-card" data-aos="fade-up">
       <img src="https://www.crackerandrush.com/wp-content/uploads/2023/06/jfb-logo-scaled.webp" alt="Jana Bank">
       <h3>Jana Bank</h3>
       <a href="https://lendperfect.janabank.com/lendperfect/login" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
+
     <div class="bank-card" data-aos="fade-up">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7YdCWQHuBbHye0j0w4X3vzqn71etekwXS7A&s" alt="PNB Housing">
       <h3>PNB UConnect</h3>
       <a href="https://uconnect.pnbhousing.com/STS/Account/Login" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
+
     <div class="bank-card" data-aos="fade-up">
       <img src="https://static.theprint.in/wp-content/uploads/2023/07/ANI-20230704050504.jpg" alt="IDFC Bank">
       <h3>IDFC Salesforce</h3>
       <a href="https://login.salesforce.com/?locale=in" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
+
     <div class="bank-card" data-aos="fade-up">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxpZqIBTrSpdhXA0polVayuKyCs0FEVgkyamhf3jCIXhO7cKXFXud-eWOq5muqZC13i-M&usqp=CAU" alt="HFC ICICI">
       <h3>HFC ICICI</h3>
       <a href="https://veloct.icicihfc.com/TPLSW/" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
+
     <div class="bank-card" data-aos="fade-up">
       <img src="https://abhfluat.abcscuat.com/-/media/feature/abcl/abfl/sticky-tab-content/abhfl-square.ashx?h=600&w=600&la=en&hash=1B2E2C8833794593FFED1D2141C6356F" alt="ABHFL LLP">
       <h3>ABHFL LLP</h3>
       <a href="https://finverse.adityabirlacapital.com/auth/login" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
+
     <div class="bank-card" data-aos="fade-up">
       <img src="https://content.jdmagicbox.com/v2/comp/mumbai/26/022p7702426/catalogue/hdfc-bank-central-processing-unit-sakinaka-mumbai-private-sector-banks-766rk7ygwc.jpg" alt="HDFC BL">
       <h3>HDFC BL</h3>
       <a href="https://appaccess.hdfcbank.com/" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
+
     <div class="bank-card" data-aos="fade-up">
       <img src="https://www.nfcw.com/wp-content/uploads/2020/06/axis-bank-logo.jpg" alt="Axis Bank">
       <h3>Axis Bank</h3>
       <a href="https://xpsf1.axisbank.com/main/s/login/" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
+
     <div class="bank-card" data-aos="fade-up">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS91g86GYPEmouJD3LiPGSYtYYW9XycFIu4pA&s" alt="HDFC HL Bank">
       <h3>HDFC HL Bank</h3>
       <a href="https://userportal.hdfcbank.com/#/home/" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
+
     <div class="bank-card" data-aos="fade-up">
       <img src="https://yt3.googleusercontent.com/U4_QJjAwGhUYDStdq5EbjMx8KOooiXTHu9AStxkKcQEpJwc8D94LC7CwPi2KQoRbXe6gd7scUg=s900-c-k-c0x00ffffff-no-rj" alt="RBL Bank">
       <h3>RBL Bank</h3>
       <a href="https://rloansptr.rblbank.com/login//" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
+
     <div class="bank-card" data-aos="fade-up">
       <img src="https://static.theprint.in/wp-content/uploads/2024/07/ANI-20240716060045.jpg" alt="IIFL Bank">
       <h3>IIFL Bank</h3>
-      <a href="https://iifl.onelogin.com/login2/?return=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJicmFuZF9pZCI6Im1hc3RlciIsIm5vdGlmaWNhdGlvbiI6eyJ0eXBlIjoiaW5mbyIsImljb24iOiJjb25uZWN0aW9uIiwibWVzc2FnZSI6IkNvbm5lY3RpbmcgdG8gKipIRkMgTE9TKioiLCJ2YWx1ZXMiOlsiKipIRkMgTE9TKioiXSwidGVtcGxhdGVfaWQiOiJjb25uZWN0aW5nX3RvX2FwcCJ9LCJwYXJhbXMiOnt9LCJmZl9tdWx0aXBsZV9icmFuZHMiOnRydWUsImFwcF9pZCI6NDY5ODA5LCJtZXRob2QiOiJnZXQiLCJhdWQiOiJBQ0NFU1MiLCJ1cmkiOiJodHRwczovL2lpZmwub25lbG9naW4uY29tL3RydXN0L29wZW5pZC1jb25uZWN0L3YyP2NsaWVudF9pZD02OTBiMGM3MC1kMGMyLTAxM2QtNmY2NC0zZjMxZWE0OGE3OWQzODE4OCZncmFudD1jM2FiNTk2YS04ZmU0LTQ1NzgtYmIxOS05ZWU4NjNmZmI3NjUmY3R4PWV5SmhiR2NpT2lKSVV6VXhNaUlzSW5SNWNDSTZJa3BYVkNKOS5leUp5WlhSMWNtNWZkRzhpT2lKb2RIUndjem92TDJscFptd3ViMjVsYkc5bmFXNHVZMjl0TDI5cFpHTXZNaTloZFhSb0wyTXpZV0kxT1RaaExUaG1aVFF0TkRVM09DMWlZakU1TFRsbFpUZzJNMlptWWpjMk5TOXNiMmRwYmlJc0ltbGhkQ0k2TVRjMU1UWXdOak13TkgwLmY1UHhFZ0NuQWpXdUV5dFphQWRYSkF4NE9nb1NFR0tEdVZyYi1WbXhvSXZidThld0FtMTVqd2tYLTZCSkVnOVJWalRWOUdvTmdLVnd6ZUYya2ZjZVp3Jm9sX29pZGNfaXNzdWVyX3VybD1odHRwcyUzQSUyRiUyRmlpZmwub25lbG9naW4uY29tJTJGb2lkYyUyRjIi target="_blank">Login</a>
+      <a href="https://iifl.onelogin.com/login2/" target="_blank">Login</a>
       <button class="fav-btn">⭐</button>
     </div>
   </div>
@@ -263,18 +276,19 @@
   <script>
     AOS.init();
 
-    // ===== SEARCH FUNCTION =====
+    // ===== SEARCH FIX =====
     const searchBar = document.getElementById("searchBar");
     const bankCards = document.querySelectorAll(".bank-card");
 
     searchBar.addEventListener("input", () => {
-      const query = searchBar.value.toLowerCase();
+      const query = searchBar.value.toLowerCase().trim();
       bankCards.forEach(card => {
-        card.style.display = card.textContent.toLowerCase().includes(query) ? "flex" : "none";
+        const name = card.querySelector("h3").textContent.toLowerCase().trim();
+        card.style.display = name.includes(query) ? "flex" : "none";
       });
     });
 
-    // ===== FAVORITES SYSTEM =====
+    // ===== FAVORITES =====
     const favButtons = document.querySelectorAll(".fav-btn");
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
@@ -316,6 +330,5 @@
       toggleMode.textContent = "☀️";
     }
   </script>
-
 </body>
 </html>
