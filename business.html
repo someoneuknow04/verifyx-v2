@@ -169,13 +169,13 @@
     </div>
 
     <div class="card" data-aos="fade-up" data-aos-delay="450">
-      <h3>Vehicle RC Check</h3>
-      <a href="https://www.carinfo.app/rc-search" target="_blank">Verify</a>
-    </div>
-
-    <div class="card" data-aos="fade-up" data-aos-delay="500">
-      <h3>Vehicle Info Alternative</h3>
-      <a href="https://vehicleinfo.app/" target="_blank">Verify</a>
+      <h3>Vehicle Verification</h3>
+      <label for="vehicle-check" style="color: #ef4444; font-weight: 600;">Select Portal</label>
+      <select id="vehicle-check" aria-label="Vehicle Verification Portals" onchange="if(this.value) window.open(this.value, '_blank');">
+        <option value="">-- Choose an option --</option>
+        <option value="https://www.carinfo.app/rc-search">RC Check – Car Info</option>
+        <option value="https://vehicleinfo.app/">Vehicle Info Alternative</option>
+      </select>
     </div>
 
   </div>
