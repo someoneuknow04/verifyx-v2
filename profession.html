@@ -24,14 +24,14 @@
 </head>
 <body>
 
-  <header data-aos="fade-down">
+  <header data-aos="fade-down" data-aos-duration="1000">
     <h1>Profession Certificate Verification</h1>
     <p>Verify licenses, registrations, and identities of professionals directly.</p>
   </header>
 
   <div class="container">
 
-    <div class="card" data-aos="fade-up">
+    <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
       <h3>Doctors</h3>
       <select onchange="if(this.value) window.open(this.value, '_blank')">
         <option value="">Select Portal</option>
@@ -42,16 +42,17 @@
       </select>
     </div>
 
-    <div class="card" data-aos="fade-up">
+    <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
       <h3>Lawyers</h3>
       <select onchange="if(this.value) window.open(this.value, '_blank')">
         <option value="">Select State Council</option>
         <option value="https://www.bctnpy.org/verify/advocate/">Tamil Nadu & Puducherry – Public Info</option>
         <option value="https://www.barcouncilmahgoa.org/v2/members">Maharashtra & Goa – Advocate List (BCMG)</option>
+        <option value="https://www.barcouncilofgujarat.org/verification-status">Gujarat – Advocate Verification</option>
       </select>
     </div>
 
-    <div class="card" data-aos="fade-up">
+    <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
       <h3>Dentists</h3>
       <select onchange="if(this.value) window.open(this.value, '_blank')">
         <option value="">Select Portal</option>
@@ -67,6 +68,12 @@
   <footer>Made by Someone</footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    AOS.init({
+      once: true, // animation occurs only once
+      easing: 'ease-in-out',
+      duration: 1000,
+    });
+  </script>
 </body>
 </html>
