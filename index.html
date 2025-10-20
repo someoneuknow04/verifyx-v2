@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VerifyX – Official Verification Hub</title>
-
-  <!-- Fonts & Animations -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -24,7 +22,7 @@
       padding: 40px 20px 20px;
     }
 
-    /* LOGO ANIMATION */
+    /* LOGO ANIMATION ONLY */
     .logo-container {
       display: flex;
       justify-content: center;
@@ -47,7 +45,7 @@
       100% { transform: scale(1); }
     }
 
-    /* MAIN TITLE SECTION */
+    /* HERO TEXT */
     .hero-text {
       text-align: center;
       margin-top: 30px;
@@ -67,7 +65,7 @@
       margin: 0 auto;
     }
 
-    /* MAIN BUTTON GRID */
+    /* GRID */
     .section-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -81,7 +79,11 @@
       background: white;
       border: 2px solid #ef4444;
       border-radius: 18px;
-      padding: 40px 20px;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
       text-align: center;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -113,6 +115,8 @@
       font-weight: 600;
       text-decoration: none;
       transition: background 0.3s ease;
+      align-self: stretch; /* full width alignment */
+      text-align: center;
     }
 
     .card a:hover {
@@ -127,14 +131,9 @@
       font-weight: 500;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 600px) {
-      .hero-text h1 {
-        font-size: 28px;
-      }
-      .hero-text p {
-        font-size: 16px;
-      }
+      .hero-text h1 { font-size: 28px; }
+      .hero-text p { font-size: 16px; }
     }
   </style>
 </head>
@@ -142,7 +141,7 @@
 <body>
   <!-- HEADER WITH LOGO -->
   <header>
-    <div class="logo-container" data-aos="zoom-in">
+    <div class="logo-container">
       <img src="logo.png" alt="VerifyX Logo">
     </div>
   </header>
@@ -158,19 +157,19 @@
     <div class="card" data-aos="fade-up">
       <h3>🏢 Business Verification</h3>
       <p>Check GST, Udyam, FSSAI, IEC, and other business licenses instantly.</p>
-      <a href="business.html">Explore</a>
+      <a href="business.html">Verify Now</a>
     </div>
 
     <div class="card" data-aos="fade-up" data-aos-delay="150">
       <h3>🏦 Bank Portals</h3>
       <p>Access partner bank dashboards securely and quickly.</p>
-      <a href="bank.html">Explore</a>
+      <a href="bank.html">Go to Portal</a>
     </div>
 
     <div class="card" data-aos="fade-up" data-aos-delay="300">
       <h3>👨‍💼 Profession Verification</h3>
       <p>Verify doctors, lawyers, and certified professionals with ease.</p>
-      <a href="profession.html">Explore</a>
+      <a href="profession.html">Verify Now</a>
     </div>
   </div>
 
