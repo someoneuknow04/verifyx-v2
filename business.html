@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Business Verification – VerifyX</title>
-  <meta name="description" content="Instantly verify GST, UDYAM, FSSAI, IEC, Startup India, IRDAI, and vehicle RC through official portals.">
+  <meta name="description" content="Instantly verify UDYAM, GST, FSSAI, IEC, Startup India, IRDAI Agents, Surveyors, and Vehicle RC through official portals.">
   
   <!-- Fonts & Animations -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet" />
@@ -24,12 +24,6 @@
       color: white;
       padding: 60px 20px;
       text-align: center;
-      animation: fadeInDown 1s ease;
-    }
-
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-30px); }
-      100% { opacity: 1; transform: translateY(0); }
     }
 
     header h1 {
@@ -59,7 +53,8 @@
       padding: 24px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
+      text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -139,17 +134,17 @@
   <div class="container">
 
     <div class="card" data-aos="fade-up" data-aos-delay="100">
-      <h3>GST Registration</h3>
-      <a href="https://services.gst.gov.in/services/searchtp" target="_blank">Verify</a>
-    </div>
-
-    <div class="card" data-aos="fade-up" data-aos-delay="150">
-      <h3>UDYAM / MSME</h3>
+      <h3>Udyam / MSME Verification</h3>
       <a href="https://udyamregistration.gov.in/Udyam_Verify.aspx" target="_blank">Verify</a>
     </div>
 
+    <div class="card" data-aos="fade-up" data-aos-delay="150">
+      <h3>GST Verification</h3>
+      <a href="https://services.gst.gov.in/services/searchtp" target="_blank">Verify</a>
+    </div>
+
     <div class="card" data-aos="fade-up" data-aos-delay="200">
-      <h3>FSSAI / FoSCoS</h3>
+      <h3>FSSAI License Check</h3>
       <a href="https://foscos.fssai.gov.in/" target="_blank">Verify</a>
     </div>
 
@@ -174,13 +169,13 @@
     </div>
 
     <div class="card" data-aos="fade-up" data-aos-delay="450">
-      <h3>RC Check</h3>
-      <label for="rc-check" style="color: #ef4444; font-weight: 600;">Select Portal</label>
-      <select id="rc-check" aria-label="RC Check Portals" onchange="if(this.value) window.open(this.value, '_blank');">
-        <option value="">-- Choose an option --</option>
-        <option value="https://www.carinfo.app/rc-search/">Car Info – Public Info</option>
-        <option value="https://vehicleinfo.app/">Vehicle Info</option>
-      </select>
+      <h3>Vehicle RC Check</h3>
+      <a href="https://www.carinfo.app/rc-search" target="_blank">Verify</a>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="500">
+      <h3>Vehicle Info Alternative</h3>
+      <a href="https://vehicleinfo.app/" target="_blank">Verify</a>
     </div>
 
   </div>
