@@ -4,116 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VerifyX – Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Manrope',sans-serif; background:#fefefe; color:#111827; overflow-x:hidden; }
 
-    body {
-      font-family: 'Manrope', sans-serif;
-      background: #fff;
-      color: #111827;
-      overflow-x: hidden;
-    }
-
+    /* LOGO */
     .logo-container {
-      background: white;
-      padding: 40px 20px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      padding: 40px 20px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
-
     .logo-container img {
       width: 480px;
-      max-width: 90vw;
-      height: auto;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-      border-radius: 16px;
+      max-width:90vw;
+      height:auto;
+      border-radius:16px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.05);
+      opacity:0;
+      transform: scale(0.8);
+      animation: logoBounce 1s ease-out forwards;
+    }
+    @keyframes logoBounce {
+      0% { transform: scale(0.8); opacity:0; }
+      60% { transform: scale(1.05); opacity:1; }
+      100% { transform: scale(1); }
     }
 
-    .split {
-      display: flex;
-      flex-direction: row;
-      height: calc(100vh - 160px);
+    /* SPLIT SECTIONS */
+    .split { display:flex; flex-wrap:wrap; justify-content:center; gap:24px; padding:40px 20px; }
+    .split > div {
+      flex:1 1 300px;
+      max-width:350px;
+      background:#ef4444;
+      color:white;
+      border-radius:16px;
+      padding:40px 20px;
+      text-align:center;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.4s, box-shadow 0.4s, background 0.3s;
+    }
+    .split .center { background:#4b5563; }
+    .split .right { background:#111; }
+
+    .split div:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow:0 12px 30px rgba(0,0,0,0.15);
     }
 
-    .left, .center, .right {
-      flex: 1 1 33.33%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 60px 20px;
-      text-align: center;
-      color: white;
-    }
-
-    .left {
-      background: #ef4444;
-    }
-
-    .center {
-      background: #4b5563;
-    }
-
-    .right {
-      background: #111;
-    }
-
-    h1 {
-      font-size: 32px;
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 16px;
-      max-width: 420px;
-      margin-bottom: 24px;
-      color: #f3f4f6;
-    }
-
-    .left p {
-      color: #fff;
-    }
+    h1 { font-size:28px; font-weight:800; margin-bottom:20px; transition: transform 0.3s; }
+    p { font-size:16px; color:#f3f4f6; margin-bottom:24px; }
 
     .btn {
-      background: white;
-      color: #ef4444;
-      padding: 12px 24px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 16px;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: background 0.3s ease;
+      display:inline-block;
+      padding:12px 24px;
+      background:white;
+      color:#ef4444;
+      font-weight:600;
+      font-size:16px;
+      border-radius:999px;
+      text-decoration:none;
+      transition: all 0.3s ease;
     }
-
     .btn:hover {
-      background: #f3f4f6;
+      transform: scale(1.05);
+      background: linear-gradient(90deg,#ef4444,#f87171);
+      color:white;
     }
 
-    @media (max-width: 768px) {
-      .split {
-        flex-direction: column;
-        height: auto;
-      }
-
-      .left, .center, .right {
-        min-height: 60vh;
-      }
-
-      .logo-container {
-        padding-top: 20px;
-      }
-
-      .logo-container img {
-        width: 300px;
-      }
+    /* RESPONSIVE */
+    @media(max-width:768px) {
+      .split { flex-direction:column; gap:20px; }
+      .split > div { max-width:100%; }
+      .logo-container { padding-top:20px; }
+      .logo-container img { width:300px; }
     }
   </style>
 </head>
@@ -126,22 +92,29 @@
 
   <!-- SPLIT SECTIONS -->
   <div class="split">
-    <div class="left">
+    <div class="left" data-aos="fade-right" data-aos-delay="100">
       <h1>Business Verification</h1>
       <p>Search and validate business licenses instantly.</p>
-      <a class="btn" href="business.html">Verify Now</a>
+      <a href="business.html" class="btn">Verify Now</a>
     </div>
-    <div class="center">
+
+    <div class="center" data-aos="zoom-in" data-aos-delay="200">
       <h1>Professional Certificate Verification</h1>
       <p>Search and validate professional licenses and IDs instantly.</p>
-      <a class="btn" href="profession.html">Verify Now</a>
+      <a href="profession.html" class="btn">Verify Now</a>
     </div>
-    <div class="right">
+
+    <div class="right" data-aos="fade-left" data-aos-delay="300">
       <h1>Bank Portals</h1>
       <p>Login to associated bank dashboards with one click.</p>
-      <a class="btn" href="bank.html">Go to Portals</a>
+      <a href="bank.html" class="btn">Go to Portals</a>
     </div>
   </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration:800, easing:'ease-out-cubic', once:true });
+  </script>
 
 </body>
 </html>
