@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VerifyX – Business Verification Portals</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Verification – VerifyX</title>
+  <meta name="description" content="Instantly verify GST, UDYAM, FSSAI, IEC, Startup India, IRDAI, and vehicle RC through official portals.">
+  
+  <!-- Fonts & Animations -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Styles -->
   <style>
     body {
       font-family: 'Manrope', sans-serif;
@@ -13,200 +18,188 @@
       margin: 0;
       padding: 0;
     }
+
     header {
       background: #ef4444;
       color: white;
       padding: 60px 20px;
       text-align: center;
+      animation: fadeInDown 1s ease;
     }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
     header h1 {
       margin: 0;
       font-size: 32px;
     }
+
     header p {
+      margin-top: 10px;
       font-size: 16px;
-      margin-top: 8px;
+      font-weight: 500;
     }
-    .search-container {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .search-container input {
-      width: 80%;
-      max-width: 400px;
-      padding: 10px 15px;
-      border: 2px solid #ef4444;
-      border-radius: 8px;
-      font-size: 16px;
-      outline: none;
-    }
+
     .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 40px 20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 24px;
     }
+
     .card {
-      background: #fff;
+      background: white;
       border: 2px solid #ef4444;
       border-radius: 16px;
       padding: 24px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+      justify-content: space-between;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(239, 68, 68, 0.15);
     }
-    .card img {
-      width: 120px;
-      height: 60px;
-      object-fit: contain;
-      margin-bottom: 16px;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
-    }
+
     .card h3 {
-      margin: 0;
-      font-size: 16px;
+      margin-top: 0;
       color: #ef4444;
-      font-weight: 700;
+      font-size: 20px;
     }
-    .card a {
-      margin-top: 12px;
+
+    .card a,
+    .card select {
+      margin-top: 14px;
+      padding: 10px 18px;
       background: #ef4444;
       color: white;
-      padding: 8px 16px;
+      border: none;
+      font-weight: 600;
       border-radius: 8px;
       text-decoration: none;
-      font-weight: 600;
+      cursor: pointer;
       transition: background 0.3s ease;
     }
-    .card a:hover {
+
+    .card a:hover,
+    .card select:hover {
       background: #dc2626;
     }
+
+    .card select {
+      width: 100%;
+    }
+
     .back-button {
-      display: block;
-      margin: 40px auto 20px;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       background: #ef4444;
       color: white;
-      text-align: center;
-      padding: 12px 24px;
+      padding: 12px 20px;
       border-radius: 999px;
       text-decoration: none;
       font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
+
     .back-button:hover {
       background: #dc2626;
+      transform: scale(1.05);
     }
+
     footer {
       text-align: center;
       font-size: 14px;
       color: #64748b;
-      margin-bottom: 20px;
+      margin: 40px 0 20px;
       font-weight: 500;
     }
   </style>
 </head>
+
 <body>
 
+  <!-- Header -->
   <header data-aos="fade-down">
-    <h1>💼 Business Verification Portals</h1>
-    <p>Instant access to official business registration and compliance portals.</p>
+    <h1>Business Verification</h1>
+    <p>Verify licenses, registrations, and identities of businesses or professionals directly.</p>
   </header>
 
-  <div class="search-container">
-    <input type="text" id="searchBar" placeholder="🔍 Search portal name...">
+  <!-- Main Grid -->
+  <div class="container">
+
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <h3>GST Registration</h3>
+      <a href="https://services.gst.gov.in/services/searchtp" target="_blank">Verify</a>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="150">
+      <h3>UDYAM / MSME</h3>
+      <a href="https://udyamregistration.gov.in/Udyam_Verify.aspx" target="_blank">Verify</a>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
+      <h3>FSSAI / FoSCoS</h3>
+      <a href="https://foscos.fssai.gov.in/" target="_blank">Verify</a>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="250">
+      <h3>Import Export Code (IEC)</h3>
+      <a href="https://www.dgft.gov.in/CP/?opt=view-any-ice" target="_blank">Verify</a>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="300">
+      <h3>Startup India Recognition</h3>
+      <a href="https://www.startupindia.gov.in/content/sih/en/startupgov/validate-startup-recognition.html" target="_blank">Verify</a>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="350">
+      <h3>Insurance Agents (IRDAI)</h3>
+      <a href="https://agencyportal.irdai.gov.in/PublicAccess/AgentLocator.aspx" target="_blank">Verify</a>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="400">
+      <h3>Surveyors (IRDAI)</h3>
+      <a href="https://irdai.gov.in/individual-surveyors1" target="_blank">Verify</a>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="450">
+      <h3>RC Check</h3>
+      <label for="rc-check" style="color: #ef4444; font-weight: 600;">Select Portal</label>
+      <select id="rc-check" aria-label="RC Check Portals" onchange="if(this.value) window.open(this.value, '_blank');">
+        <option value="">-- Choose an option --</option>
+        <option value="https://www.carinfo.app/rc-search/">Car Info – Public Info</option>
+        <option value="https://vehicleinfo.app/">Vehicle Info</option>
+      </select>
+    </div>
+
   </div>
 
-  <div class="container" id="portalContainer">
-    <div class="card" data-aos="fade-up">
-      <img src="https://www.gst.gov.in/assets/images/gstnlogo.svg" alt="GST Portal">
-      <h3>GST Portal</h3>
-      <a href="https://www.gst.gov.in/" target="_blank">Visit</a>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <img src="https://udyamregistration.gov.in/udyam-registration/images/logo.svg" alt="UDYAM Registration">
-      <h3>UDYAM Registration</h3>
-      <a href="https://udyamregistration.gov.in/" target="_blank">Visit</a>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <img src="https://www.mca.gov.in/content/mca/global/images/MCA_logo.png" alt="MCA Portal">
-      <h3>MCA Portal</h3>
-      <a href="https://www.mca.gov.in/" target="_blank">Visit</a>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <img src="https://www.cersai.org.in/CERSAI/images/logo.png" alt="CERSAI">
-      <h3>CERSAI</h3>
-      <a href="https://www.cersai.org.in/CERSAI/" target="_blank">Visit</a>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <img src="https://www.onlineservices.nsdl.com/paam/public/images/nsdl-logo.png" alt="NSDL PAN Verification">
-      <h3>NSDL PAN Verification</h3>
-      <a href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html" target="_blank">Visit</a>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <img src="https://www.epfindia.gov.in/assets/img/logo.png" alt="EPFO">
-      <h3>EPFO</h3>
-      <a href="https://www.epfindia.gov.in/" target="_blank">Visit</a>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <img src="https://www.esic.gov.in/assets/img/logo.png" alt="ESIC">
-      <h3>ESIC</h3>
-      <a href="https://www.esic.gov.in/" target="_blank">Visit</a>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <img src="https://www.dgft.gov.in/CP/?q=sites/default/files/DGFTLogo_1.png" alt="DGFT IEC">
-      <h3>DGFT (Import Export Code)</h3>
-      <a href="https://www.dgft.gov.in/" target="_blank">Visit</a>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <img src="https://assets-global.website-files.com/63634f1f60f8d8d8159cfe1e/63c4a64c9f048222e692b1d0_gem-logo.png" alt="GeM Portal">
-      <h3>GeM Portal</h3>
-      <a href="https://gem.gov.in/" target="_blank">Visit</a>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <img src="https://www.fssai.gov.in/dam/jcr:3b0247ab-5f3c-4cfa-9e86-8afc6f77c401/FSSAI_logo.png" alt="FSSAI">
-      <h3>FSSAI</h3>
-      <a href="https://foscos.fssai.gov.in/" target="_blank">Visit</a>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <img src="https://rerafiling.com/images/logo.png" alt="RERA">
-      <h3>RERA</h3>
-      <a href="https://rera.gov.in/" target="_blank">Visit</a>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <img src="https://contents.tdscpc.gov.in/images/tdslogo.png" alt="TRACES (TDS)">
-      <h3>TRACES (TDS Portal)</h3>
-      <a href="https://www.tdscpc.gov.in/app/login.xhtml" target="_blank">Visit</a>
-    </div>
-    <div class="card" data-aos="fade-up">
-      <img src="https://www.startupindia.gov.in/content/sih/en/homepage/_jcr_content/responsivegrid/carousel_copy_copy_c_1777/carouselItemCopy/image.coreimg.png/1673337321593/startup-india-logo.png" alt="Startup India">
-      <h3>Startup India</h3>
-      <a href="https://www.startupindia.gov.in/" target="_blank">Visit</a>
-    </div>
-  </div>
-
+  <!-- Back Button -->
   <a href="index.html" class="back-button">⬅ Back to Home</a>
+
+  <!-- Footer -->
   <footer>Made by Someone</footer>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
-    const searchBar = document.getElementById("searchBar");
-    const cards = document.querySelectorAll(".card");
-    searchBar.addEventListener("input", () => {
-      const term = searchBar.value.toLowerCase();
-      cards.forEach(card => {
-        const name = card.querySelector("h3").textContent.toLowerCase();
-        card.style.display = name.includes(term) ? "flex" : "none";
-      });
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true
     });
   </script>
+
 </body>
 </html>
